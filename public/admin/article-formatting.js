@@ -99,3 +99,20 @@ input.addEventListener("keydown", (event) => {
 //     // return data;
 
 // };
+
+const [uploadImageForm] = document.forms
+
+uploadImageForm.onsubmit = function (event) {
+  // Prevents submitting form when "Insert an image" button is clicked
+  event.preventDefault()
+
+  // Sends form data asynchronously
+  fetch('/images/new', {
+    method: 'POST',
+    body: new FormData(uploadImageForm)
+  }).then(response => response.text())
+    .then((id) => {
+      // Replace with your code
+      alert('File ID is: ' + id)
+    })
+}
