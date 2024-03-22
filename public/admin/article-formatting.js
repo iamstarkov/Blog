@@ -103,7 +103,6 @@ input.addEventListener("keydown", (event) => {
 const [uploadImageForm] = document.forms
 
 uploadImageForm.onsubmit = function (event) {
-  // Prevents submitting form when "Insert an image" button is clicked
   event.preventDefault()
 
   // Sends form data asynchronously
