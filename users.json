@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Egor4y5tgd",
+    "email": "egor2@gmail.com",
+    "password": "c217fa7d55731d309397cfeb81d84cbf7125d785ea459f6acb2e5a9019ff9006cb3c0c01222e593df63de00ffc29b1c20cb3d6b512579be019dfef8262a7f115.0ec45ff90361972b",
+    "id": "da773466"
+  },
+  {
+    "email": "egor@test.com",
+    "password": "74a28072285e391247773a1f0d946e31d89f7e21bd8000b0a6bb10c00d076744ef33c7936808e31e4400c07425a9ec2557a2852a8503796417d6cf182afeb20d.a1c2e0c0c2f73e28",
+    "id": "564e8eb5",
+    "admin": "true",
+    "name": "Egor"
+  },
+  {
+    "name": "35tregf",
+    "email": "345terfd@dfgfdg.ergf",
+    "password": "10acc11f18179d98a8fee983e1f4c47116130dd8c3156ddb23291d74e389e0e45f3ddfb1949748bb648d2f63c4f321f5e8fc4879a4d8e5d3da0f0fd3307e355d.8fca435719fc58d2",
+    "id": "3fd959eb"
+  },
+  {
+    "name": "tegr",
+    "email": "4twrfd@sdfwsfd.sdf",
+    "password": "4d412257e25673f6a3e88ebe5e3a76604bebb31d5c3d49954414b823d43ba3ab71b91410459b82184bba261633efa13f3bd01b658a15a25b394ce194ac234aa1.c31eddd867f94d8f",
+    "id": "a060d159"
+  },
+  {
+    "name": "edg",
+    "email": "werwerwer@wrwrw.com",
+    "password": "004023e722ae0aefd07dc21029d4ac01ec3e09006dda2a5b7156c9d1685b6019d5b43f43d2600db8b91ae82b8f53bcb0368564a7296464eb9792be08b3b71c44.2de20eb64932dfd1",
+    "id": "fed555c8"
+  },
+  {
+    "name": "1234",
+    "email": "sdfgsdf@sdfsdf.com",
+    "password": "12aeafedc4cfbeed41ee715255ccb8285ea8fd88f221c01de66209143f9cf6d8f1344ae55a3a436d35b0366a24804f9b3ba911705b8625f3ad13df73ab59df9c.6bd65fc25c8068c8",
+    "id": "f86cfe16"
+  },
+  {
+    "name": "7y6rht",
+    "email": "testtest@test.com",
+    "password": "981805161f8d3c5b6bae4318f1db76e295a62639e53115f4c2e4423c63df750d8b4df67a135b9f904be7bed348cb2f24cf4f46a232e1beb567fbf3cae2e933da.6843b83dc5a8e9c7",
+    "id": "306a130c"
+  },
+  {
+    "name": "name1",
+    "email": "test@test.com",
+    "password": "6384457c90fad96eb0157a9597b3757ee05daf27b64d0da0fe184a8a426a543a96b5bd04629ff58a67be1c5356cffea6e44cc77a1d2298db3500da3ede2ecd93.bce57f22276f94a0",
+    "id": "b2ccced2"
+  }
+]
