@@ -61,17 +61,19 @@ const makeList = (openingTag, closingTag) => {
   }
 };
 
+function safetify(threat) {
+  return threat.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+};
+
 const replaceTags = (oldTags, newTags) => {
+
   const { selectionStart, selectionEnd, inputValue } = defineInputs();
   let targetString = inputValue.slice(selectionStart, selectionEnd);
   const arrayLength = oldTags.length;
-  const escapeRegExp = (str) => {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  };
 
   for (let i = 0; i < arrayLength; i++) {
-    const escapeRegExp = new RegExp(oldTags[i], "g");
-    targetString = targetString.replace(escapeRegExp, newTags[i]);
+    const oldTagsRegExp = new RegExp(safetify(oldTags[i]), "g");
+    targetString = targetString.replace(oldTagsRegExp, safetify(newTags[i]));
   }
 
   input.value =
@@ -95,11 +97,20 @@ input.addEventListener("keydown", (event) => {
 // const  getPicture = async () => {
 //     // const response = await fetch("/api/upload-picture");
 //     // const data = await response.json();
-//     console.log('data');
 //     // return data;
 
 // };
 
+// const image = async () => {
+//  return await picturesRepo.getOneBy({ id })
+// }
+
+// const imageTag = (picture => `
+// <figure>
+// <img src="data:image/png;base64, ${picture.body}"/>
+// </figure>
+// `
+// )
 const [uploadImageForm] = document.forms
 
 uploadImageForm.onsubmit = function (event) {
@@ -110,8 +121,6 @@ uploadImageForm.onsubmit = function (event) {
     method: 'POST',
     body: new FormData(uploadImageForm)
   }).then(response => response.text())
-    .then((id) => {
-      // Replace with your code
-      alert('File ID is: ' + id)
+    .then((id) => { insertIntoText(`\r\n{'picture id' : ${id} }\r\n`)
     })
 }

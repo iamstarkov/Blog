@@ -7,13 +7,11 @@ const app = express();
 
 router.get('/api/getArticles', async (req, res) => {
     allArticles = await articlesRepo.getAll();
-    // console.log(allArticles);
     res.send(allArticles);
 });
 
 // router.get('/api/identifyUser', async (req, res) => {
 //     usersId = req.session.userId;
-//     // console.log(usersId);
 //     res.send({ usersId });
 // });
 

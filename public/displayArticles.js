@@ -57,6 +57,7 @@ const makeStringShorter = (str, num) => {
     return str.slice(0, num) + "...";
   }
 };
+// Каким-то образом создалась статья без параметра body. Это привело к ошибкам. Надо предусмотреть такой сценарий и ловить ошибки.
 
 const sortArticles = () => {
   articles.forEach((article) => {
