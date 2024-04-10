@@ -128,6 +128,7 @@ uploadImageForm.onsubmit = function (event) {
           `Failed to upload an image: [${status} ${statusText}] "${await res.text()}"`
         );
       }
+      return res;
     })
     .then((response) => response.text())
     .then((id) => {
