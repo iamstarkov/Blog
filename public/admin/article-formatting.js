@@ -113,29 +113,24 @@ input.addEventListener("keydown", (event) => {
 // )
 const [uploadImageForm] = document.forms
 
-uploadImageForm.onsubmit = function (event) {
+uploadImageForm.onsubmit = async function (event) {
   event.preventDefault()
-
-  // Sends form data asynchronously
-  fetch("/images/new", {
-    method: "POST",
-    body: new FormData(uploadImageForm),
-  })
-    .then(async (res) => {
-      if (!res.ok) {
-        const { status, statusText } = res;
-        throw new Error(
-          `Failed to upload an image: [${status} ${statusText}] "${await res.text()}"`
-        );
-      }
-      return res;
+  try {
+    // Sends form data asynchronously
+    const response = await fetch("/images/new", {
+      method: "POST",
+      body: new FormData(uploadImageForm),
     })
-    .then((response) => response.text())
-    .then((id) => {
-      insertIntoText(`\r\n{'picture id' : ${id} }\r\n`);
-    })
-    .catch((err) => {
-      console.error(err);
-      alert(err.message)
-    });
+    const text = await response.text()
+    if (!response.ok) {
+      const { status, statusText } = response;
+      throw new Error(
+        `Failed to upload an image: [${status} ${statusText}] "${text}"`
+      );
+    }
+    insertIntoText(`\r\n{'picture id' : ${text} }\r\n`);
+  } catch (err) {
+    console.error(err);
+    alert(err.message)
+  }
 }
