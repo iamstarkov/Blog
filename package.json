@@ -5,7 +5,9 @@
   "main": "index.js",
   "repository": "Yegor-JS/Blog",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "node --test",
+    "tdd": "node --test --watch"
   },
   "keywords": [],
   "author": "",

@@ -23,3 +23,15 @@ Project will be available on http://localhost:3000/
 ```
 npm run dev
 ```
+
+## run tests once
+
+```
+npm test
+```
+
+## run tests continously
+
+```
+npm run tdd
+```
