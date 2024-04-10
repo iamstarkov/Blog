@@ -22,7 +22,7 @@ router.get('/admin/articles/:id/edit', requireAuth, requireAdmin, async (req, re
     const id = req.params.id;
     const articleWithoutLines = await articlesRepo.getOneBy({ id });
     let article = addLinesToArticle(articleWithoutLines);
-    article = await articlesRepo.removePictures(article)
+    article.body = await articlesRepo.removePictures(article.body)
     res.send(editArticle({ article }));
 }
 );
