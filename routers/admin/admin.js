@@ -21,7 +21,8 @@ router.get("/admin/create.html", requireAuth, requireAdmin, async (req, res) => 
 router.get('/admin/articles/:id/edit', requireAuth, requireAdmin, async (req, res) => {
     const id = req.params.id;
     const articleWithoutLines = await articlesRepo.getOneBy({ id });
-    const article = addLinesToArticle(articleWithoutLines);
+    let article = addLinesToArticle(articleWithoutLines);
+    article = await articlesRepo.removePictures(article)
     res.send(editArticle({ article }));
 }
 );
