@@ -116,10 +116,14 @@ const [uploadImageForm] = document.forms
 uploadImageForm.onsubmit = async function (event) {
   event.preventDefault()
   try {
+    const form = new FormData(uploadImageForm);
+    if (form.get("image").size === 0) {
+      throw new Error("Please select an image file");
+    }
     // Sends form data asynchronously
     const response = await fetch("/images/new", {
       method: "POST",
-      body: new FormData(uploadImageForm),
+      body: form,
     })
     const text = await response.text()
     if (!response.ok) {
