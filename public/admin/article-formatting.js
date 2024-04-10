@@ -117,10 +117,24 @@ uploadImageForm.onsubmit = function (event) {
   event.preventDefault()
 
   // Sends form data asynchronously
-  fetch('/images/new', {
-    method: 'POST',
-    body: new FormData(uploadImageForm)
-  }).then(response => response.text())
-    .then((id) => { insertIntoText(`\r\n{'picture id' : ${id} }\r\n`)
+  fetch("/images/new", {
+    method: "POST",
+    body: new FormData(uploadImageForm),
+  })
+    .then(async (res) => {
+      if (!res.ok) {
+        const { status, statusText } = res;
+        throw new Error(
+          `Failed to upload an image: [${status} ${statusText}] "${await res.text()}"`
+        );
+      }
     })
+    .then((response) => response.text())
+    .then((id) => {
+      insertIntoText(`\r\n{'picture id' : ${id} }\r\n`);
+    })
+    .catch((err) => {
+      console.error(err);
+      alert(err.message)
+    });
 }
