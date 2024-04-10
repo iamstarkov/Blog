@@ -24,4 +24,6 @@ app.use(userRouter);
 app.use(articleRouter);
 app.use(picturesRouter);
 
-app.listen(3000, () => {});
+app.listen(3000, () => {
+  console.log("[Blog] http://localhost:3000/ is ready");
+});

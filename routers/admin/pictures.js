@@ -11,6 +11,9 @@ router.post(
   requireAuth,
   requireAdmin,
   async (req, res) => {
+    if (!req.file) {
+      return res.status(400).send("file is empty");
+    }
     const imageBody = req.file.buffer.toString("base64");
     const name = req.file.originalname;
     const uploadedImage = await picturesRepo.create({ imageBody, name });
